@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Norazlina Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Gaya Navigasi Seragam */
+        .top-header { background: #4a1212; padding: 25px 0; text-align: center; }
+        .site-main-title { color: #fdf5e6; font-size: 1.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .top-nav { display: flex; justify-content: center; gap: 10px; }
+        .top-nav-link { color: #fdf5e6; text-decoration: none; padding: 8px 20px; border-radius: 20px; font-weight: 600; transition: 0.3s; cursor: pointer; }
+        .top-nav-link:hover, .top-nav-link.active { background: #fdf5e6; color: #4a1212; }
+
+        /* Gaya Kandungan */
+        .sub-page-box { background: #ffffff; padding: 40px; border-radius: 12px; border: 1px solid rgba(74, 18, 18, 0.08); max-width: 900px; margin: 40px auto; text-align: center; }
+        .sub-page-title { font-family: 'Syne', sans-serif; font-size: 2.2rem; color: #4a1212; margin-bottom: 30px; text-transform: uppercase; }
+        
+        /* Anchor Link Styling */
+        .anchor-link { display: inline-block; margin-bottom: 20px; color: #4a1212; font-weight: 600; text-decoration: underline; cursor: pointer; }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto; padding-top: 25px; }
+        .gallery-item { background: transparent; transition: transform 0.3s ease; }
+        .gallery-item:hover { transform: scale(1.02); }
+        .gallery-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+        
+        .caption { font-size: 0.9rem; font-weight: 600; color: #4a1212; margin-top: 10px; font-family: 'Instrument Sans', sans-serif; }
+
+        /* Bahagian Peta */
+        .location-section { margin-top: 50px; border-top: 1px dashed #eedec9; padding-top: 40px; }
+        .map-container { margin-top: 20px; width: 100%; box-shadow: 0 10px 30px rgba(74, 18, 18, 0.1); border-radius: 20px; overflow: hidden; }
+
+        /* Footer Rubrik */
+        .site-footer { text-align: center; margin-top: 50px; padding-bottom: 20px; font-size: 0.85rem; color: #555; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <header class="top-header">
+        <h1 class="site-main-title">WELCOME TO MY PERSONAL WEBSITE</h1>
+        <nav class="top-nav">
+            <a href="#" onclick="confirmNavigation('index.html')" class="top-nav-link">HOME</a>
+            <a href="#" onclick="confirmNavigation('biodata.html')" class="top-nav-link">BIODATA</a>
+            <a href="#" onclick="confirmNavigation('education.html')" class="top-nav-link">EDUCATION</a>
+            <a href="#" onclick="confirmNavigation('experience.html')" class="top-nav-link">EXPERIENCE</a>
+            <a href="#" onclick="confirmNavigation('family.html')" class="top-nav-link">FAMILY</a>
+            <a href="#" onclick="confirmNavigation('gallery.html')" class="top-nav-link active">GALLERY</a>
+            <a href="#" onclick="confirmNavigation('contact.html')" class="top-nav-link">CONTACT</a>
+        </nav>
+    </header>
+
+    <main class="sub-page-box">
+        <h2 class="sub-page-title">My Aesthetic Gallery</h2>
+        
+        <a href="#map-section" class="anchor-link">GO TO CAMPUS LOCATION ↓</a>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="myself.jpg">
+                <p class="caption">"This is me"</p>
+            </div>
+            <div class="gallery-item">
+                <img src="classmates.jpg">
+                <p class="caption">"This is my classmates"</p>
+            </div>
+            <div class="gallery-item">
+                <img src="food.jpg">
+                <p class="caption">"This is my comfort food"</p>
+            </div>
+        </div>
+
+        <section class="location-section" id="map-section">
+            <h3 style="color: #4a1212;">WHERE I'M STUDIED</h3>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.0573508475622!2d102.72672767396192!3d2.4879697568632215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31ce2c6ce929a871%3A0xc0dfa5fe6922a589!2sUiTM%20Cawangan%20Johor%2C%20Kampus%20Segamat!5e0!3m2!1sms!2smy!4v1782030673220!5m2!1sms!2smy" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Created by: Norazlina Binti Shari | Student ID: 2024745193</p>
+        <p>Visit: <a href="https://uitm.edu.my" target="_blank" style="color: #4a1212;">Official UiTM Website</a> (External Link)</p>
+    </footer>
+
+    <script>
+        function confirmNavigation(url) {
+            var userConfirmed = confirm("Hi! Are you sure you want to go to this page?");
+            if (userConfirmed) {
+                window.location.href = url;
+            }
+        }
+    </script>
+</body>
+</html>

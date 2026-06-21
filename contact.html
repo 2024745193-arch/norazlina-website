@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Norazlina Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Gaya Navigasi (Dikekalkan seperti asal) */
+        .top-header { background: #4a1212; padding: 25px 0; text-align: center; }
+        .site-main-title { color: #fdf5e6; font-size: 1.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .top-nav { display: flex; justify-content: center; gap: 10px; }
+        .top-nav-link { color: #fdf5e6; text-decoration: none; padding: 8px 20px; border-radius: 20px; font-weight: 600; transition: 0.3s; cursor: pointer; }
+        .top-nav-link:hover, .top-nav-link.active { background: #fdf5e6; color: #4a1212; }
+
+        /* Gaya Kandungan */
+        .sub-page-box { background: #ffffff; padding: 40px; border-radius: 12px; border: 1px solid rgba(74, 18, 18, 0.08); max-width: 600px; margin: 40px auto; }
+        .sub-page-title { font-family: 'Syne', sans-serif; font-size: 2rem; color: #4a1212; margin-bottom: 20px; text-transform: uppercase; }
+
+        /* Form Styling (Maturity & Richness) */
+        form { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; text-align: left; }
+        input, textarea { padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
+        button { background: #4a1212; color: #fdf5e6; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; transition: 0.3s; }
+        button:hover { background: #6a1a1a; }
+
+        .contact-details { margin-top: 30px; border-top: 1px dashed #eedec9; padding-top: 25px; text-align: left; }
+        .contact-info-link { display: block; background: #eedec9; padding: 15px; border-radius: 8px; margin-bottom: 12px; text-decoration: none; color: #4a1212; font-weight: 600; }
+
+        .site-footer { text-align: center; margin-top: 50px; font-size: 0.8rem; color: #555; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <header class="top-header">
+        <h1 class="site-main-title">WELCOME TO MY PERSONAL WEBSITE</h1>
+        <nav class="top-nav">
+            <a href="#" onclick="confirmNavigation('index.html')" class="top-nav-link">HOME</a>
+            <a href="#" onclick="confirmNavigation('biodata.html')" class="top-nav-link">BIODATA</a>
+            <a href="#" onclick="confirmNavigation('education.html')" class="top-nav-link">EDUCATION</a>
+            <a href="#" onclick="confirmNavigation('experience.html')" class="top-nav-link">EXPERIENCE</a>
+            <a href="#" onclick="confirmNavigation('family.html')" class="top-nav-link">FAMILY</a>
+            <a href="#" onclick="confirmNavigation('gallery.html')" class="top-nav-link">GALLERY</a>
+            <a href="#" onclick="confirmNavigation('contact.html')" class="top-nav-link active">CONTACT</a>
+        </nav>
+    </header>
+
+    <main class="sub-page-box">
+        <h2 class="sub-page-title">Get In Touch</h2>
+        
+        <p>Follow these steps to reach me:</p>
+        <ol>
+            <li>Fill in your details in the form below.</li>
+            <li>Click the submit button.</li>
+            <li>Wait for my response via email!</li>
+        </ol>
+
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="button" onclick="handleFormSubmit()">SEND MESSAGE</button>
+        </form>
+
+        <div class="contact-details">
+            <a href="mailto:2024745193@student.uitm.edu.my" class="contact-info-link">✉️ 2024745193@student.uitm.edu.my</a>
+        </div>
+    </main>
+
+     <footer class="site-footer">
+            <p>CREATED BY: NORAZLINA BINTI SHARI | DATE: 2026-06-16</p>
+        </footer>
+    </main>
+
+    <script>
+        function confirmNavigation(url) {
+            var userConfirmed = confirm("Hi! Are you sure you want to go to this page?");
+            if (userConfirmed) { window.location.href = url; }
+        }
+
+        // Fungsi ringkas untuk butang submit
+        function handleFormSubmit() {
+            alert("Thankyou! I accept your messages");
+            document.getElementById("contactForm").reset();
+        }
+    </script>
+</body>
+</html>
