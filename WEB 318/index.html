@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome To My Personal Website | Norazlina</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+      /* (Gaya CSS anda dikekalkan seperti asal) */
+      body { font-family: 'Instrument Sans', sans-serif; background-color: #fcfaf7; margin: 0; padding: 0; }
+      .site-wrapper { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+      .top-header { margin-bottom: 40px; }
+      .main-layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: 45px; align-items: flex-start; }
+      .left-column { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+      .profile-frame { width: 100%; max-width: 350px; height: auto; overflow: hidden; border-radius: 20px; box-shadow: 0 10px 30px rgba(74, 18, 18, 0.05); }
+      .profile-image-display { width: 100%; height: auto; display: block; }
+      .live-status-box { display: inline-flex; align-items: center; gap: 8px; background: #ffffff; padding: 10px 18px; border-radius: 30px; width: fit-content; border: 1px solid rgba(74, 18, 18, 0.05); box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+      .status-dot { width: 8px; height: 8px; background-color: #2e7d32; border-radius: 50%; animation: pulse 2s infinite; }
+      .status-text { font-size: 0.85rem; font-weight: 500; color: #554444; }
+      .right-column { display: flex; flex-direction: column; gap: 20px; }
+      .intro-card { background: #ffffff; padding: 40px; border-radius: 24px; border: 1px solid rgba(74, 18, 18, 0.08); box-shadow: 0 4px 30px rgba(74, 18, 18, 0.03); }
+      .greeting-tag { display: inline-block; background-color: #f0e4d7; color: #4a1212; padding: 6px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 20px; }
+      .full-name { font-size: 2.4rem; font-weight: 700; color: #4a1212; margin: 0 0 15px 0; letter-spacing: -0.5px; }
+      .student-id-tag { display: inline-block; background-color: #fbf5ef; color: #4a1212; padding: 6px 14px; border-radius: 10px; font-size: 0.9rem; font-weight: 700; margin-bottom: 25px; }
+      .profile-bio-text { font-size: 1.1rem; color: #6e5a58; margin: 0; border-left: 4px solid #4a1212; padding-left: 15px; font-style: italic; }
+      .quick-info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+      .info-pill-item { background: #ffffff; border: 1px solid rgba(74, 18, 18, 0.08); padding: 20px 15px; border-radius: 16px; text-align: center; box-shadow: 0 4px 20px rgba(74, 18, 18, 0.02); transition: transform 0.2s ease; }
+      .info-pill-item:hover { transform: translateY(-3px); }
+      .info-pill-icon { font-size: 1.4rem; display: block; margin-bottom: 8px; }
+      .info-pill-label { font-weight: 700; color: #4a1212; font-size: 0.95rem; display: block; line-height: 1.2; }
+      .info-pill-sub { font-size: 0.8rem; color: #8a7573; margin-top: 2px; }
+      .music-card { background: #4a1212; color: #f7ede2; padding: 16px 24px; border-radius: 18px; display: flex; align-items: center; gap: 20px; box-shadow: 0 8px 30px rgba(74, 18, 18, 0.12); cursor: pointer; user-select: none; transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+      .music-card:hover { transform: translateY(-2px); }
+      .music-icon-box { width: 52px; height: 52px; background: rgba(247, 237, 226, 0.1); border: 1px solid rgba(247, 237, 226, 0.25); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s ease; }
+      .sound-wave { display: flex; align-items: flex-end; gap: 3px; width: 18px; height: 16px; }
+      .sound-wave span { display: block; width: 2px; height: 100%; background-color: #f7ede2; border-radius: 1px; transition: transform 0.3s ease; }
+      .music-card.playing-active .music-icon-box { background: #f7ede2; }
+      .music-card.playing-active .sound-wave span { background-color: #4a1212; animation: dance 1s ease-in-out infinite alternate; }
+      .song-title { font-weight: 600; font-size: 1.05rem; color: #ffffff; margin: 0 0 3px 0; }
+      .song-artist { font-size: 0.8rem; opacity: 0.75; text-transform: uppercase; }
+      .site-footer { margin-top: 60px; padding: 20px; font-size: 0.85rem; color: #775555; text-align: center; }
+      @keyframes pulse { 0% { transform: scale(0.95); opacity: 0.5; } 50% { transform: scale(1); opacity: 1; } 100% { transform: scale(0.95); opacity: 0.5; } }
+      @keyframes dance { 0% { transform: scaleY(0.2); } 100% { transform: scaleY(1.1); } }
+      @media (max-width: 768px) { .main-layout { grid-template-columns: 1fr; gap: 25px; } .quick-info-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+   <div class="site-wrapper" style="margin-top: 30px;">
+      <header class="top-header">
+          <h1 class="site-main-title">Welcome To My Personal Website</h1>
+          <nav class="top-nav">
+              <a href="#" onclick="confirmNavigation('index.html')" class="top-nav-link active">Home</a>
+              <a href="#" onclick="confirmNavigation('biodata.html')" class="top-nav-link">Biodata</a>
+              <a href="#" onclick="confirmNavigation('education.html')" class="top-nav-link">Education</a>
+              <a href="#" onclick="confirmNavigation('experience.html')" class="top-nav-link">Experience</a>
+              <a href="#" onclick="confirmNavigation('family.html')" class="top-nav-link">Family</a>
+              <a href="#" onclick="confirmNavigation('gallery.html')" class="top-nav-link">Gallery</a>
+              <a href="#" onclick="confirmNavigation('contact.html')" class="top-nav-link">Contact</a>
+          </nav>
+      </header>
+
+      <main class="main-layout">
+          <section class="left-column">
+              <div class="profile-frame">
+                  <img src="profile-banner.jpeg" alt="Norazlina Profile Picture" class="profile-image-display">
+              </div>
+              <div class="live-status-box">
+                  <div class="status-dot"></div>
+                  <span class="status-text">Available for Opportunities</span>
+              </div>
+          </section>
+
+          <section class="right-column">
+              <div class="intro-card">
+                  <span class="greeting-tag">HELLO, I'M NORAZLINA!</span>
+                  <h2 class="full-name">NORAZLINA BINTI SHARI</h2>
+                  <div class="student-id-tag">2024745193 / JSI1105A</div>
+                  <p class="profile-bio-text">"Capturing moments."</p>
+              </div>
+
+              <div class="quick-info-grid">
+                  <div class="info-pill-item"><span class="info-pill-icon">💻</span><span class="info-pill-label">Information</span><span class="info-pill-sub">Management</span></div>
+                  <div class="info-pill-item"><span class="info-pill-icon">📍</span><span class="info-pill-label">UiTM Johor</span><span class="info-pill-sub">Campus Segamat</span></div>
+                  <div class="info-pill-item"><span class="info-pill-icon">📷</span><span class="info-pill-label">Media Maker</span><span class="info-pill-sub">Visual & Codes</span></div>
+              </div>
+
+              <div class="music-card" id="custom-music-player" onclick="togglePlayMusic()">
+                  <div class="music-icon-box"><div class="sound-wave"><span></span><span></span><span></span><span></span></div></div>
+                  <div><h4 class="song-title">Chaotic</h4><span class="song-artist" id="song-status">Tap to listen</span></div>
+              </div>
+              <audio id="bg-audio" loop><source src="chaotic.mp3" type="audio/mpeg"></audio>
+          </section>
+      </main>
+
+      <footer class="site-footer">
+            <p>CREATED BY: NORAZLINA BINTI SHARI | DATE: 2026-06-16</p>
+        </footer>
+    </main>
+
+   <script>
+      // Fungsi Pop-up pintu masuk
+      window.onload = function() {
+          alert("Welcome to my Website Norazlina!");
+      };
+
+      // Fungsi Pengesahan Navigasi
+      function confirmNavigation(url) {
+          var userConfirmed = confirm("Hi! Are you sure you want to go to this page?");
+          if (userConfirmed) {
+              window.location.href = url;
+          }
+      }
+
+      // Fungsi Audio
+      var audio = document.getElementById("bg-audio");
+      var statusText = document.getElementById("song-status");
+      var playerCard = document.getElementById("custom-music-player");
+      function togglePlayMusic() {
+          if (audio.paused) {
+              audio.play().then(() => { statusText.innerHTML = "Now Playing"; playerCard.classList.add("playing-active"); }).catch((error) => { console.log(error); });
+          } else {
+              audio.pause(); statusText.innerHTML = "Paused"; playerCard.classList.remove("playing-active");
+          }
+      }
+   </script>
+</body>
+</html>
